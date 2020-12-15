@@ -11,9 +11,15 @@ class Slingshot {
         this.pointB=pointB;
     }
     display() {
-        var posA=this.sling.bodyA.position;
-        var posB=this.pointB;
-        strokeWeight(4);
-        line(posA.x,posA.y,posB.x,posB.y);
+        if (this.sling.bodyA){
+            var posA=this.sling.bodyA.position;
+            var posB=this.pointB;
+            strokeWeight(4);
+            line(posA.x,posA.y,posB.x,posB.y);
+        }
+    }
+
+    fly(){
+        this.sling.bodyA = null;
     }
 }
