@@ -23,7 +23,7 @@ function setup() {
   platform1 = new Ground(600,350,250,10);
   platform2 = new Ground(900,200,250,10);
 
-  block1 = new Block(600,320);
+   block1 = new Block(600,320);
   block2 = new Block(570,320);
   block3 = new Block(900,150);
   block4 = new Block(540,320);
@@ -31,23 +31,23 @@ function setup() {
   block6 = new Block(630,320);
   block7 = new Block(660,320);
   block8 = new Block(690,320);
-  block9 = new Block(600,300);
-  block10 = new Block(570,300);
-  block11 = new Block(540,300);
-  block12 = new Block(630,300);
-  block13 = new Block(660,300);
-  block14 = new Block(600,280);
-  block15 = new Block(570,280);
-  block16 = new Block(630,280);
-  block17 = new Block(600,260);
+  block9 = new Block(600,290);
+  block10 = new Block(570,290);
+  block11 = new Block(540,290);
+  block12 = new Block(630,290);
+  block13 = new Block(660,290);
+  block14 = new Block(600,260);
+  block15 = new Block(570,260);
+  block16 = new Block(630,260);
+  block17 = new Block(600,230);
   block18 = new Block(870,150);
   block19 = new Block(840,150);
   block20 = new Block(930,150);
   block21 = new Block(960,150);
-  block22 = new Block(900,130);
-  block23 = new Block(870,130);
-  block24 = new Block(930,130);
-  block25 = new Block(900,110);
+  block22 = new Block(900,120);
+  block23 = new Block(870,120);
+  block24 = new Block(930,120);
+  block25 = new Block(900,90);
 
   polygon = new Polygon(200,200,50,50);
   sling = new Slingshot(polygon.body,{x:200,y:200});
@@ -95,13 +95,13 @@ function draw() {
 }
 
 function mouseDragged(){
-  if (gameState=="launched"){
-      Matter.Body.setPosition(birds[birds.length-1].body, {x: mouseX , y: mouseY});
+  if (gameState==="onSling"){
+      Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
   }
 }
 
 
 function mouseReleased(){
-  slingshot.fly();
-  flySound.play();
+  sling.fly();
   gameState = "launched";
+}
